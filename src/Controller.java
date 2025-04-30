@@ -7,9 +7,9 @@ public class Controller {
         Model miModel = new Model();
 
         // Crear tres coches
-        miModel.crearCoche("LaFerrari", "SBC 1234");
-        miModel.crearCoche("Alpine", "HYU 4567");
-        miModel.crearCoche("Aston Martin", "FGH 3333");
+        Model.crearCoche("LaFerrari", "SBC 1234");
+        Model.crearCoche("Alpine", "HYU 4567");
+        Model.crearCoche("Aston Martin", "FGH 3333");
 
         Coche ferrari = miModel.getCoche("SBC 1234");
         // modifica la velocidad
