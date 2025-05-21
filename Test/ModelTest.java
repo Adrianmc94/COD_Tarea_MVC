@@ -18,12 +18,11 @@ class ModelTest {
     @Test
     @DisplayName("Crear coche")
     public void crearCocheTest(){
-        Model model = new Model();
 
-        assertEquals("1234ABC", model.crearCoche("Modelo1", "1234ABC").matricula);
-        assertNotEquals(null,model.crearCoche("Modelo1", "1234ABC").matricula);
-        assertEquals("Modelo1", model.crearCoche("Modelo1", "1234ABC").modelo);
-        assertNotEquals(null,model.crearCoche("Modelo1", "1234ABC").modelo);
+        assertEquals("1234ABC", Model.crearCoche("Modelo1", "1234ABC").matricula);
+        assertNotEquals(null,Model.crearCoche("Modelo1", "1234ABC").matricula);
+        assertEquals("Modelo1", Model.crearCoche("Modelo1", "1234ABC").modelo);
+        assertNotEquals(null,Model.crearCoche("Modelo1", "1234ABC").modelo);
     }
 
     @Test
