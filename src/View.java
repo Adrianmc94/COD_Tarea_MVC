@@ -1,5 +1,5 @@
 import java.util.Scanner; // Importa la clase Scanner para leer entrada del usuario por consola
-
+// Clase que muestra el menú principal de la aplicación
 public class View {
     public static void menu() {
         Scanner scanner = new Scanner(System.in); // Se crea un objeto Scanner para capturar entrada del usuario
