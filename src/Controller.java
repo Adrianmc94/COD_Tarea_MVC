@@ -23,7 +23,7 @@ public class Controller {
         }
         return -1;
     }
-
+    // Lista que almacena todos los coches creados
     public static ArrayList<Coche> obtenerTodosLosCoches() {
         return Model.getAllCoches();
     }
