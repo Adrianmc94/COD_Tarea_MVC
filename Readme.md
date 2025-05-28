@@ -2,7 +2,7 @@
 
 En la view hice mejor el modo en el que estaba hecho el ejercicio de antes, con un switch case y recogiendo cada valor dado en una varialble, en esto mismo hice que buscar el coche sea por su matricula, que el Pseudocodigo no lo puse.
 
-
+Todos los cambios hechos durante en el examen estan en la rama Comentarios
 
 
 
