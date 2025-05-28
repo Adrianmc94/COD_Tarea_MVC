@@ -31,5 +31,11 @@ public class Controller {
         return Model.getAllCoches();
     }
 
+    public static String avanzarCoche(String matricula, int metros) {
+        return Model.avanzar(matricula, metros);
+    }
 
+    public static double ponerGasolinaCoche(String matricula, int litros) {
+        return Model.ponerGasolina(matricula, litros);
+    }
 }

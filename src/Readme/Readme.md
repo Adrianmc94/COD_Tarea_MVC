@@ -57,3 +57,35 @@ return Model.avanzar(matricula, metros);
     public static double ponerGasolinaCoche(String matricula, int litros) {
         return Model.ponerGasolina(matricula, litros);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+view:
+case 5:
+System.out.print("Matrícula del coche: ");
+String mat3 = scanner.nextLine();
+System.out.print("Distancia a avanzar (en metros): ");
+int metros = scanner.nextInt();
+scanner.nextLine();
+String mensaje = Controller.avanzarCoche(mat3, metros);
+System.out.println(mensaje);
+break;
+
+                case 6:
+                    System.out.print("Matrícula del coche: ");
+                    String mat4 = scanner.nextLine();
+                    System.out.print("Litros de gasolina a añadir: ");
+                    int litros = scanner.nextInt();
+                    scanner.nextLine();
+                    double gasActual = Controller.ponerGasolinaCoche(mat4, litros);
+                    System.out.println("Gasolina actual: " + String.format("%.2f", gasActual) + " litros");
+                    break;
