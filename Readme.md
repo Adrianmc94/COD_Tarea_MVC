@@ -1,3 +1,46 @@
+# Comentarios Examen:
+
+En la view hice mejor el modo en el que estaba hecho el ejercicio de antes, con un switch case y recogiendo cada valor dado en una varialble, en esto mismo hice que buscar el coche sea por su matricula, que el Pseudocodigo no lo puse.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Arquitectura MVC
 
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
