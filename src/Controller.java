@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Controlador que gestiona la lógica de la app.
+ */
 public class Controller {
 
     public static Coche crearCoche(String modelo, String matricula) {
@@ -18,13 +21,15 @@ public class Controller {
     public static int disminuirVelocidad(String matricula, int decremento) {
         Coche coche = Model.getCoche(matricula);
         if (coche != null) {
-            int nuevaVel = Math.max(0, coche.velocidad - decremento); // no baja de 0
+            int nuevaVel = Math.max(0, coche.velocidad - decremento);
             return Model.cambiarVelocidad(matricula, nuevaVel);
         }
         return -1;
     }
-    // Lista que almacena todos los coches creados
+
     public static ArrayList<Coche> obtenerTodosLosCoches() {
         return Model.getAllCoches();
     }
+
+
 }
