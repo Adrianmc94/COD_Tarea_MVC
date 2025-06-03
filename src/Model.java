@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Observer;
 
 /**
  * Clase que maneja los datos (modelo) del programa.
@@ -25,6 +26,8 @@ public class Model {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad = v;
+            ObserverLimite.update(coche);
+
             return coche.velocidad;
         }
         return -1;

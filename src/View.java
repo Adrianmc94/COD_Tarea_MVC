@@ -88,4 +88,7 @@ public class View {
 
         scanner.close();
     }
+    static void avisoObserver(){
+        System.out.println("Observer!!!!! As sobrepasado el limite de volocidad!!!!!!!!!!!");
+    }
 }
