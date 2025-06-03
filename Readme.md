@@ -1,114 +1,25 @@
-# Comentarios Examen:
+El usuario en la view eligue la opcion 5 avanzar, la view llama al controller con la funciones avanzarCoche con los parametros matricula y metros, el controller llama al model con la funcion avanzar con mos parametros de matricula y metros, el model calcula el consumo del coche y descuenta la gasolina del deposito, cada vez que se cambie la gasolina del deposito el model le manda ObserverGasolina y el conprueba si es menor que 10, si es asi el observerGasolina le manda unb mensaje a la View, despues el model le devuleve la infno al controller y el controller a la view para que se muestre por pantalla
 
-En la view hice mejor el modo en el que estaba hecho el ejercicio de antes, con un switch case y recogiendo cada valor dado en una varialble, en esto mismo hice que buscar el coche sea por su matricula, que el Pseudocodigo no lo puse.
-
-Todos los cambios hechos durante en el examen estan en la rama Comentarios
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Arquitectura MVC
-
-Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
-
----
-## Diagrama de clases:
-
-```mermaid
-classDiagram
-    class Coche {
-        String: matricula
-        String: modelo
-        Integer: velocidad
-    }
-      class Controller{
-          +main()
-      }
-      class View {+muestraVelocidad(String, Integer)}
-      class Model {
-          ArrayList~Coche~: parking
-          +crearCoche(String, String, String)
-          +getCoche(String)
-          +cambiarVelocidad(String, Integer)
-          +getVelocidad(String)
-      }
-    Controller "1" *-- "1" Model : association
-    Controller "1" *-- "1" View : association
-    Model "1" *-- "1..n" Coche : association
-      
-```
-
----
-
-## Diagrama de Secuencia
-
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
 
 
 ```mermaid
 sequenceDiagram
-    participant Model
-    participant Controller
+    actor Usuario
     participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
-
-```mermaid
-sequenceDiagram
-    participant Model
     participant Controller
-    participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
-    activate Model
-    Model-->>Controller: Coche
-    deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-    deactivate View
+    participant Model
+    participant ObserverLimite
+
+    Usuario->>View: Selecciona opción 5 (Avanzar coche)
+    View->>Controller: avanzarCoche(matricula, metros)
+    Controller->>Model: avanzar(matricula, metros)
+    Model->>Model: Calcula consumo y descuenta gasolina
+
+    alt Gasolina < 10 litros
+        Model->>ObserverLimite: update(coche)
+        ObserverLimite->>View: avisoObserver()
+    end
+
+    Model-->>Controller: Devuelve mensaje de avance
+    Controller-->>View: Muestra mensaje al usuario
 ```

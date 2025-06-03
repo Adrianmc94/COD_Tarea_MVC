@@ -26,7 +26,7 @@ public class Model {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad = v;
-            ObserverLimite.update(coche);
+
 
             return coche.velocidad;
         }
@@ -57,9 +57,11 @@ public class Model {
         if (coche.gasolina >= consumo) {
             coche.gasolina -= consumo;
             return "El coche avanzó " + metros + " metros. Gasolina restante: " + String.format("%.2f", coche.gasolina) + " litros.";
+
         } else {
             return "No hay suficiente gasolina para avanzar.";
         }
+
     }
 
     /**

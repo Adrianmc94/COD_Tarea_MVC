@@ -1,6 +1,6 @@
 public class ObserverLimite {
     static void update(Coche coche){
-          if (coche.velocidad > 120){
+          if (coche.gasolina < 10){
             View.avisoObserver();
         }
 
