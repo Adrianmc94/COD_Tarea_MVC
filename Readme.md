@@ -22,4 +22,4 @@ sequenceDiagram
 
     Model-->>Controller: Devuelve mensaje de avance
     Controller-->>View: Muestra mensaje al usuario
-```
+``` 
